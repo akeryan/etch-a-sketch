@@ -1,7 +1,3 @@
-body {
-    display: flex;
-    justify-content: center;
-}
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -9,4 +5,9 @@ body {
     width: 512px;
     height: 512px;
     border: 1px solid black;
+    margin: auto;
+}
+
+button {
+    padding: 20px;
 }
