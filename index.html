@@ -8,7 +8,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="size-btn" type="button">Pick greed size</button>
-    <div class="grid" id="grid"></div>    
+    <div class="container">
+        <div class="controls">
+            <button type="button" id="size-btn">Pick greed size</button>
+            <button type="button" id="color-btn">Pick color</button>
+
+            <div class="colorpicker-container">
+                <input type="color" id="color-picker"/>
+            </div>
+
+            <div class="slide-container">
+                <input type="range" min="1" max="60" value="16" step="1" class="slider" id="myRange">
+                <output for="myRange" id="value"></output>
+            </div>
+
+        </div>    
+        <div class="grid" id="grid"></div> 
+    </div>   
 </body>
 </html>

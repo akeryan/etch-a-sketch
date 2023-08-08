@@ -1,13 +1,24 @@
+button {
+    padding: 10px 20px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
     width: 512px;
     height: 512px;
     border: 1px solid black;
-    margin: auto;
 }
 
-button {
-    padding: 20px;
-}
