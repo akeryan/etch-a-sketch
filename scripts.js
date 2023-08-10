@@ -4,6 +4,7 @@ const sizeOutputEl = document.getElementById('value')
 const colorPickerEl = document.getElementById('color-picker')
 const radioFormEl = document.getElementById("radio-form")
 const clearBtnEl = document.getElementById('clear')
+const solidRbEl = document.getElementById('solid-rb')
 const myRadio = radioFormEl.elements.coloring_mode
 
 let currentColor = "#ff0000" // default color
@@ -28,6 +29,8 @@ sizeInputEl.addEventListener("input", event => {
 
 colorPickerEl.addEventListener("input", event => {
     currentColor = event.target.value
+    solidRbEl.checked = true
+
 })
 
 function addEventListeners() {
@@ -38,7 +41,7 @@ function addEventListeners() {
                 break
                 case 'rainbow': cell.style.backgroundColor = randHexColor()
                 break
-                case 'erazor': cell.style.backgroundColor = "#ffffff"
+                case 'erasor': cell.style.backgroundColor = "#ffffff"
                 break
             }
         })           
