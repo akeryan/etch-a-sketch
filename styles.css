@@ -58,7 +58,7 @@ button {
     margin-bottom: 10px;
 }
 
-.radioGroup input {
+.radioGroup .rb-container {
     margin-bottom: 10px;
 }
 
@@ -77,8 +77,27 @@ button {
     border: none;
 }
 
+.rb-container.solid {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rb-container.solid label {
+    margin-top: 3px;
+}
+
+.color-picker {
+    border: none;
+    margin-left: 3px;
+    height: 25px;
+    width: 22px;
+} 
+
 .btn.clear {
     margin-bottom: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 15px #b1b1b1;
 }
 
 

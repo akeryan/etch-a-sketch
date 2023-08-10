@@ -7,6 +7,9 @@
     <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -14,35 +17,46 @@
             <form id="radio-form">
                 <fieldset class="radioGroup" id="radio-group">
                     <legend>Painting mode</legend>
-                    <div>
-                        <input type="radio" name="coloring_mode" value="rainbow" id="rainbow"/>
-                        <label for="rainbow">rainbow</label>
+                    <div class="rb-container rainbow">
+                        <input class="rb rainbow" type="radio" name="coloring_mode" value="rainbow" id="rainbow-rb"/>
+                        <label for="rainbow-rb">rainbow</label>
                     </div>  
-                    <div>
-                        <input type="radio" name="coloring_mode" value="solid" id="solid" checked/>
-                        <label for="solid">solid color</label>
+                    <div class="rb-container solid">
+                        <input class="rb solid" type="radio" name="coloring_mode" value="solid" id="solid-rb" checked/>
+                        <label for="solid-rb">solid color</label>
+                        <input class="color-picker" type="color" id="color-picker"/>
                     </div>
-                    <div>
-                        <input type="radio" name="coloring_mode" value="erazor" id="erazor"/>
-                        <label for="solid">erasor</label>
+                    <div class="rb-container erasor">
+                        <input class="rb erasor" type="radio" name="coloring_mode" value="erasor" id="erasor-rb"/>
+                        <label for="erasor-rb">erasor</label>
                     </div>
                 </fieldset>
             </form>
 
-            <div class="colorpicker-container">
-                <input type="color" id="color-picker" name="Aram"/>
-                <!-- <label for="Aram">: active color</label> -->
-            </div>
-
-            <button type="button" id="clear">Clear</button>
+            <button class="btn clear" type="button" id="clear">Clear</button>
 
             <div class="slide-container">
                 <input type="range" min="1" max="60" value="16" step="1" class="slider" id="myRange">
                 <output for="myRange" id="value"></output>
             </div>
+        </div>   
+        <div class="canvas">
+            <h2 class="title">Etch-a-Sketch</h2>
 
-        </div>    
-        <div class="grid" id="grid"></div> 
-    </div>   
+            <div class="grid" id="grid"></div> 
+
+            <footer class="footer">
+                <p>
+                    Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="https://github.com/akeryan" target="_blank">
+                        akeryan
+                    </a>
+                </p>        
+            </footer> 
+        </div>
+    </div>      
 </body>
 </html>
