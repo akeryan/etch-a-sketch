@@ -36,7 +36,7 @@ function addEventListeners() {
             switch( myRadio.value ) {
                 case 'solid': cell.style.backgroundColor = currentColor
                 break
-                case 'rainbow': cell.style.backgroundColor = randColor()
+                case 'rainbow': cell.style.backgroundColor = randHexColor()
                 break
                 case 'erazor': cell.style.backgroundColor = "#ffffff"
                 break
@@ -45,10 +45,10 @@ function addEventListeners() {
     })
 }
 
-function randColor() {
+function randHexColor() {
     let color = '#'
     for( let i = 0; i < 6; i++) {
-        color += Math.floor(Math.random()*9) + 1
+        color += (Math.floor(Math.random()*16)).toString(16)
     }
     return color    
 }
