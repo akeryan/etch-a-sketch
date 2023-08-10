@@ -1,8 +1,10 @@
 const gridEl = document.getElementById('grid')
-const buttonEl = document.getElementById('size-btn')
 const sizeInputEl = document.getElementById('myRange')
 const sizeOutputEl = document.getElementById('value')
 const colorPickerEl = document.getElementById('color-picker')
+const radioFormEl = document.getElementById("radio-form")
+const clearBtnEl = document.getElementById('clear')
+const myRadio = radioFormEl.elements.coloring_mode
 
 let currentColor = "#ff0000" // default color
 
@@ -13,19 +15,16 @@ const width = 512
 
 createGrid(16)
 
-// SLIDER SECTION ==========================================================
-
 sizeOutputEl.textContent = `${sizeInputEl.value} X ${sizeInputEl.value}`;
+
+clearBtnEl.addEventListener("click", event => {
+    cells.map(c => c.style.backgroundColor = "#ffffff")
+})
 
 sizeInputEl.addEventListener("input", event => {
     createGrid( event.target.value )
     sizeOutputEl.textContent = `${event.target.value} X ${event.target.value}`;
   });
-
-buttonEl.addEventListener("click", event => {
-    let temp = prompt("Enter size: 1-100")
-    createGrid(temp)    
-})
 
 colorPickerEl.addEventListener("input", event => {
     currentColor = event.target.value
@@ -33,9 +32,25 @@ colorPickerEl.addEventListener("input", event => {
 
 function addEventListeners() {
     cells.forEach( cell => {
-        cell.addEventListener( 'mouseover', event => 
-           cell.style.backgroundColor = currentColor)
-    });
+        cell.addEventListener( 'mouseover', event => {
+            switch( myRadio.value ) {
+                case 'solid': cell.style.backgroundColor = currentColor
+                break
+                case 'rainbow': cell.style.backgroundColor = randColor()
+                break
+                case 'erazor': cell.style.backgroundColor = "#ffffff"
+                break
+            }
+        })           
+    })
+}
+
+function randColor() {
+    let color = '#'
+    for( let i = 0; i < 6; i++) {
+        color += Math.floor(Math.random()*9) + 1
+    }
+    return color    
 }
 
 function createGrid( sideNum ) {

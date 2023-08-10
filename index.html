@@ -10,12 +10,30 @@
 <body>
     <div class="container">
         <div class="controls">
-            <button type="button" id="size-btn">Pick greed size</button>
-            <button type="button" id="color-btn">Pick color</button>
+            <form id="radio-form">
+                <fieldset class="radioGroup" id="radio-group">
+                    <legend>Painting mode</legend>
+                    <div>
+                        <input type="radio" name="coloring_mode" value="rainbow" id="rainbow"/>
+                        <label for="rainbow">rainbow</label>
+                    </div>  
+                    <div>
+                        <input type="radio" name="coloring_mode" value="solid" id="solid" checked/>
+                        <label for="solid">solid color</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="coloring_mode" value="erazor" id="erazor"/>
+                        <label for="solid">erazor</label>
+                    </div>
+                </fieldset>
+            </form>
 
             <div class="colorpicker-container">
-                <input type="color" id="color-picker"/>
+                <input type="color" id="color-picker" name="Aram"/>
+                <!-- <label for="Aram">: active color</label> -->
             </div>
+
+            <button type="button" id="clear">Clear</button>
 
             <div class="slide-container">
                 <input type="range" min="1" max="60" value="16" step="1" class="slider" id="myRange">
