@@ -1,0 +1,4 @@
+Center the interface according to the canvas (drawing space)
+Make the interface shrink properly when the window is resized
+Add "show grid" option
+Make drawing when mouse is down

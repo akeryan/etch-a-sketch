@@ -1,10 +1,18 @@
+/* GENERAL STYLES============================================= */
+
+:root {
+    --body-color: #e9e9e9;
+    --canvas-color: #ffffff;
+    --shadow-color: #b1b1b1;
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
 body {
-    background-color: #e9e9e9;
+    background-color: var(--body-color);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -19,22 +27,7 @@ button {
     gap: 30px;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    margin-top: 55px;
-
-}
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    width: 512px;
-    height: 512px;
-    /* border: 1px solid black; */
-    box-shadow: 0 0 15px #b1b1b1;
-}
+/* || CANVAS SECTION ========================================= */
 
 .canvas {
     display: flex;
@@ -45,8 +38,36 @@ button {
     font-size: 14px;
 }
 
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--canvas-color);
+    width: 512px;
+    height: 512px;
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
 .title {
     font-weight: 100;
+}
+
+/* || CONTROLS SECTION ======================================= */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.slide-container input {
+    align-self: stretch;
 }
 
 .slide-container output {
@@ -54,11 +75,7 @@ button {
 }
 
 .radioGroup {
-    padding: 10px 30px 10px 10px;
-    margin-bottom: 10px;
-}
-
-.radioGroup .rb-container {
+    padding: 15px 20px 10px 15px;
     margin-bottom: 10px;
 }
 
@@ -66,21 +83,11 @@ button {
     padding: 0px 10px;
 }
 
-.colorpicker-container {
-    display: inline-block;
-    margin-left: 5px;
-}
-
-.colorpicker-container input {
-    width: 25px;
-    height: 28px;
-    border: none;
-}
-
-.rb-container.solid {
+.rb-container {
     display: flex;
-    justify-content: center;
-    gap: 5px;
+    justify-content: flex-start;
+    gap: 7px;
+    margin-bottom: 10px;
 }
 
 .rb-container.solid label {
@@ -95,10 +102,7 @@ button {
 } 
 
 .btn.clear {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
-    box-shadow: 0 0 15px #b1b1b1;
+    box-shadow: 0 0 15px var(--shadow-color);
 }
-
-
-
