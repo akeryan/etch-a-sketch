@@ -74,6 +74,10 @@ button {
     display: block;
 }
 
+input[ type = range ] {
+    accent-color:purple;
+}
+
 .radioGroup {
     padding: 15px 20px 10px 15px;
     margin-bottom: 10px;
@@ -92,6 +96,10 @@ button {
 
 .rb-container.solid label {
     margin-top: 3px;
+}
+
+input[type = radio] {
+    accent-color: purple;
 }
 
 .color-picker {
